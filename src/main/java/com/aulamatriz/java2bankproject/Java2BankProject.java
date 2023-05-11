@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.aulamatriz.java2bankproject;
 
 /**
  *
- * @author edwin
+ * @author Edwin Porras Angarita
  */
 public class Java2BankProject {
 
