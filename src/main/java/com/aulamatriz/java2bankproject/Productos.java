@@ -7,6 +7,7 @@ import java.util.Objects;
  * @author Edwin Porras Angarita
  */
 public class Productos {
+
     private short productID;
     private String productName;
     private String productNameShort;
