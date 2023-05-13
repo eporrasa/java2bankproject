@@ -1,4 +1,4 @@
-package com.aulamatriz.java2bankproject;
+package cliente;
 
 import java.util.Objects;
 

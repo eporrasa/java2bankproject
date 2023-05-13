@@ -1,5 +1,6 @@
 package com.aulamatriz.java2bankproject;
 
+import cliente.Cliente;
 import java.util.Objects;
 
 /**

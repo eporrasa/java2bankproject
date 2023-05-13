@@ -1,16 +1,20 @@
-package com.aulamatriz.java2bankproject;
+package cliente;
 
+import java.util.List;
 import java.util.Objects;
+import com.aulamatriz.java2bankproject.Producto;
+
 
 /**
  *
  * @author Edwin Porras Angarita
  */
-public class Cliente extends Persona {
+public class Cliente extends Persona implements ClientePremium{
 
     private String joinedDate;
     private boolean snActive = true;
     private String unactiveDate = "";
+    private List<Producto> listaProducto;
 
     public Cliente(String joinedDate, int id_Persona, String name, String lastName, int nroDoc, short age, String email, int nroMovil) {
         super(id_Persona, name, lastName, nroDoc, age, email, nroMovil);
@@ -40,6 +44,15 @@ public class Cliente extends Persona {
     public void setUnactiveDate(String unactiveDate) {
         this.unactiveDate = unactiveDate;
     }
+
+    public List<Producto> getListaProducto() {
+        return listaProducto;
+    }
+
+    public void setListaProducto(List<Producto> listaProducto) {
+        this.listaProducto = listaProducto;
+    }
+    
 
     @Override
     public String toString() {
@@ -76,5 +89,9 @@ public class Cliente extends Persona {
         return Objects.equals(this.unactiveDate, other.unactiveDate);
     }
 
+    @Override
+    public boolean addProduct() {
+        return ClientePremium.super.addProduct();
+    }
 
 }
