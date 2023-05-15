@@ -9,7 +9,7 @@ import com.aulamatriz.java2bankproject.Producto;
  *
  * @author Edwin Porras Angarita
  */
-public class Cliente extends Persona implements ClientePremium{
+public class Cliente extends Persona implements ClienteClasico, ClienteMedium, ClientePremium{
 
     private String joinedDate;
     private boolean snActive = true;
