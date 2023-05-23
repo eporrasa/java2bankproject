@@ -13,9 +13,9 @@ public class Persona {
     private int nroDoc;
     private short age;
     private String email;
-    private int nroMovil;
+    private double nroMovil;
 
-    public Persona(int id_Persona, String name, String lastName, int nroDoc, short age, String email, int nroMovil) {
+    public Persona(int id_Persona, String name, String lastName, int nroDoc, short age, String email, double nroMovil) {
         this.id_Persona = id_Persona;
         this.name = name;
         this.lastName = lastName;
@@ -73,11 +73,11 @@ public class Persona {
         this.email = email;
     }
 
-    public int getNroMovil() {
+    public double getNroMovil() {
         return nroMovil;
     }
 
-    public void setNroMovil(int nroMovil) {
+    public void setNroMovil(double nroMovil) {
         this.nroMovil = nroMovil;
     }
 
@@ -95,7 +95,6 @@ public class Persona {
         hash = 67 * hash + this.nroDoc;
         hash = 67 * hash + this.age;
         hash = 67 * hash + Objects.hashCode(this.email);
-        hash = 67 * hash + this.nroMovil;
         return hash;
     }
 

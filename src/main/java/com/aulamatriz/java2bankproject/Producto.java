@@ -5,8 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Objects;
 
 public class Producto {
 
@@ -27,7 +26,7 @@ public class Producto {
 
         @Override
         public String toString() {
-            return "TipoProductos{" + "tipo=" + tipo + ", descripcion=" + descripcion + '}';
+            return " Productos: " + "tipo= " + tipo + ", descripcion= " + descripcion;
         }
     }
 
@@ -50,14 +49,6 @@ public class Producto {
                 break;
             default:
                 throw new AssertionError();
-        }
-
-        try {
-            this.snInsertToDb();
-        } catch (SQLException sqlEx) {
-            Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, sqlEx);
-        } catch (Exception ex) {
-            Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -87,6 +78,28 @@ public class Producto {
 
     public void setTipo(TipoProductos tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + Objects.hashCode(this.tipo);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Producto other = (Producto) obj;
+        return this.tipo == other.tipo;
     }
 
 }

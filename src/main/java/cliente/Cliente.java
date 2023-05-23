@@ -3,22 +3,23 @@ package cliente;
 import java.util.List;
 import java.util.Objects;
 import com.aulamatriz.java2bankproject.Producto;
-
+import java.util.ArrayList;
 
 /**
  *
  * @author Edwin Porras Angarita
  */
-public class Cliente extends Persona implements ClienteClasico, ClienteMedium, ClientePremium{
+public class Cliente extends Persona{ // implements ClienteClasico, ClienteMedium, ClientePremium {
 
     private String joinedDate;
     private boolean snActive = true;
     private String unactiveDate = "";
-    private List<Producto> listaProducto;
+    private List<Producto> listaProductos;
 
-    public Cliente(String joinedDate, int id_Persona, String name, String lastName, int nroDoc, short age, String email, int nroMovil) {
+    public Cliente(String joinedDate, int id_Persona, String name, String lastName, int nroDoc, short age, String email, double nroMovil) {
         super(id_Persona, name, lastName, nroDoc, age, email, nroMovil);
         this.joinedDate = joinedDate;
+        this.listaProductos = new ArrayList<>();
     }
 
     public String getJoinedDate() {
@@ -44,19 +45,18 @@ public class Cliente extends Persona implements ClienteClasico, ClienteMedium, C
     public void setUnactiveDate(String unactiveDate) {
         this.unactiveDate = unactiveDate;
     }
-
-    public List<Producto> getListaProducto() {
-        return listaProducto;
-    }
-
-    public void setListaProducto(List<Producto> listaProducto) {
-        this.listaProducto = listaProducto;
+    
+    public void addProducto(Producto p){
+        this.listaProductos.add(p);
     }
     
+    public List<Producto> obtenerProductos(){
+        return this.listaProductos;
+    }
 
     @Override
     public String toString() {
-        return "Cliente{" + "joinedDate=" + joinedDate + ", snActive=" + snActive + ", unactiveDate=" + unactiveDate + '}';
+        return "Cliente{" + "Nombre=" + getName() + " - Productos: " + obtenerProductos() + '}';
     }
 
     @Override
@@ -89,9 +89,5 @@ public class Cliente extends Persona implements ClienteClasico, ClienteMedium, C
         return Objects.equals(this.unactiveDate, other.unactiveDate);
     }
 
-    @Override
-    public boolean addProduct() {
-        return ClientePremium.super.addProduct();
-    }
 
 }
