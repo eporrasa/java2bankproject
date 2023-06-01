@@ -14,8 +14,10 @@ public class Persona {
     private short age;
     private String email;
     private double nroMovil;
+    private String ciudad;
 
-    public Persona(int id_Persona, String name, String lastName, int nroDoc, short age, String email, double nroMovil) {
+    public Persona(int id_Persona, String name, String lastName, int nroDoc, 
+            short age, String email, double nroMovil, String ciudad) {
         this.id_Persona = id_Persona;
         this.name = name;
         this.lastName = lastName;
@@ -23,6 +25,15 @@ public class Persona {
         this.age = age;
         this.email = email;
         this.nroMovil = nroMovil;
+        this.ciudad = ciudad;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     public int getId_Persona() {

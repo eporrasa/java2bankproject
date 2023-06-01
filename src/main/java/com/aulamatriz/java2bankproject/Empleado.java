@@ -13,8 +13,10 @@ public class Empleado extends Cliente{
     private String contactName;
     private int contactPhone;
 
-    public Empleado(int id_Empleado, short securityLevel, String contactName, int contactPhone, String joinedDate, int id_Persona, String name, String lastName, int nroDoc, short age, String email, int nroMovil) {
-        super(joinedDate, id_Persona, name, lastName, nroDoc, age, email, nroMovil);
+    public Empleado(int id_Empleado, short securityLevel, String contactName, 
+            int contactPhone, String joinedDate, int id_Persona, String name, 
+            String lastName, int nroDoc, short age, String email, int nroMovil, String ciudad ) {
+        super(joinedDate, id_Persona, name, lastName, nroDoc, age, email, nroMovil, ciudad);
         this.id_Empleado = id_Empleado;
         this.securityLevel = securityLevel;
         this.contactName = contactName;

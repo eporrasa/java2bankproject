@@ -26,7 +26,7 @@ public class Producto {
 
         @Override
         public String toString() {
-            return " Productos: " + "tipo= " + tipo + ", descripcion= " + descripcion;
+            return descripcion;
         }
     }
 
@@ -52,6 +52,12 @@ public class Producto {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Producto{" + "tipo=" + tipo + '}';
+    }
+
+    
     public boolean snInsertToDb() throws SQLException, Exception {
         try {
             InputStream file = new FileInputStream("banco.txt");
