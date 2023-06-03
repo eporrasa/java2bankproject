@@ -27,6 +27,7 @@ public class Java2BankProject {
 
         List<Cliente> listaClientes = bank.obtenerClientes();
 
+        
         for (Cliente lc : listaClientes) {
             switch (lc.getNroDoc()) {
                 case 91422333:
